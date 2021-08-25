@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Home</h1>
+    <%    data.forEach(el => {%>
+        <img src="<%=el.contentUrl%>" alt="">
+        <a href="/post/delete/<%=el.id%>">delete</a>
+        <a href="post/edit/<%=el.id%>">edit</a>
+    <%})      %>
+    
 </body>
 </html>

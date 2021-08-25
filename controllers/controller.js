@@ -8,7 +8,7 @@ class Controller{
             include: [{ model: Hashtag}]
         })
         .then(data => {
-            res.send(data)
+            res.render(`home`, {data})
         })
         .catch(err => {
             console.log(err);
@@ -36,25 +36,79 @@ class Controller{
         })
     }
     static getAddPost(req, res){
-        res.render(`add-post`)
-    }
-    static postAddPost(req, res){
-        let { contentUrl, title, caption, postDate} =req.body
-
-        Post.create({ contentUrl, title, caption, postDate})
+        Hashtag.findAll()
         .then(data => {
-            res.redirect(`/`)
+            res.render(`add-post`, {data})
         })
         .catch(err => {
             console.log(err);
         })
     }
+    static postAddPost(req, res){
+        let { contentUrl, title, caption, hashtagId} =req.body
+        console.log(req.body);
+        let postId = req.params.id
+        let postDate = null
+        let hashtagIdArr = [] //buat conjuction
+
+        const getHashTags = str => str.match(/#[a-zA-Z0-9]+/g).map(match => match.substring(1));
+        let hashtag = getHashTags(caption)
+        
+        for(let tag of hashtag){
+            Hashtag.findAll({
+                where: {name: tag}
+            })
+            .then(data => {
+                console.log(data, `<<<`);
+                if(data.length > 0){
+                    hashtagIdArr.push(data.id)
+                } else {
+                   return Hashtag.create({name :tag})
+                }
+            })
+            .then(data => {
+                return Post.create({ contentUrl, title, caption, postDate})
+            })
+            .then(data => {
+                res.redirect(`/`)
+
+            })
+            .catch(gaada => {
+                console.log(gaada, `++++`);
+            })
+        }
+        
+        // .catch(err => {
+        //     Hashtag.create()
+        // })
+        
+
+
+        // PR!!!!!
+        // Post.create({ contentUrl, title, caption, postDate})
+        // .then(data => {
+        //     return PostHashtag.create({postId, hashtagId})
+            
+        // })
+        // .then(data => {
+        //     res.redirect(`/`)
+            
+        // })
+        // .catch(err => {
+        //     console.log(err);
+        // })
+    }
     static getEditPost(req, res){
         let id = req.params.id
+        // blabla #abc >> abc >> abc >> data.id >> post 
 
-        Post.findOne( { where: {id} })
+        Post.findOne( { where: {id}, include: [{model: Hashtag}] })
         .then(data => {
-            res.render(`edit-post`, {data})
+            // return Hashtag.findAll()
+        })
+        .then(hashtagAll => {
+            res.render(`edit-post`, {})
+
         })
         .catch(err => {
             console.log(err);
