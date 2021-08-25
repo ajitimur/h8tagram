@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       // Movie.belongsToMany(models.Cast, { through: 'MovieCast' });
-      Post.belongsToMany(models.Hashtag, { through: `postHashtag`})
+      Post.belongsToMany(models.Hashtag, { through: `PostHashtags`,  foreignKey: `postId`})
     }
   };
   Post.init({
@@ -21,6 +21,13 @@ module.exports = (sequelize, DataTypes) => {
     caption: DataTypes.STRING,
     postDate: DataTypes.DATE
   }, {
+    hooks: {
+      beforeCreate: (instance, options) => {
+        if(!instance.postDate){
+          instance.postDate = new Date()
+        }
+      }
+    },
     sequelize,
     modelName: 'Post',
   });

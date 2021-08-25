@@ -2,13 +2,13 @@ const express = require(`express`);
 // const router = require(".");
 const postRouter = express.Router()
 const Controller = require(`../controllers/controller`)
+const isLogin = require(`../middleware/checklogin`)
 
-
-postRouter.get(`/:id`, Controller.postId)
-postRouter.get(`/delete/:id`, Controller.deletePost)
-postRouter.get(`/add`, Controller.getAddPost)
+postRouter.get(`/postid/:id`,isLogin, Controller.postId)
+postRouter.get(`/add`, isLogin,Controller.getAddPost)
 postRouter.post(`/add`, Controller.postAddPost)
-postRouter.get(`/edit/:id`, Controller.getEditPost)
+postRouter.get(`/delete/:id`, isLogin,Controller.deletePost)
+postRouter.get(`/edit/:id`, isLogin,Controller.getEditPost)
 postRouter.post(`/edit/:id`, Controller.postEditPost)
 
 module.exports = postRouter
