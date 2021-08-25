@@ -1,11 +1,14 @@
-const { Post, Hashtag, PostHashtag } = require(`../models`)
+const { Post, Hashtag, PostHashtag } = require(`../models`);
+const hashtag = require("../models/hashtag");
 
 
 class Controller{
     static homepage(req, res){
-        Post.findAll()
+        Post.findAll({
+            include: [{ model: Hashtag}]
+        })
         .then(data => {
-            res.render(`home`, {data})
+            res.send(data)
         })
         .catch(err => {
             console.log(err);

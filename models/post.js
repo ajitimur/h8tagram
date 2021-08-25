@@ -12,14 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       // Movie.belongsToMany(models.Cast, { through: 'MovieCast' });
-      Post.belongsToMany(model.Hashtag, { through: `postHashtag`})
+      Post.belongsToMany(models.Hashtag, { through: `postHashtag`})
     }
   };
   Post.init({
     contentUrl: DataTypes.STRING,
     title: DataTypes.STRING,
     caption: DataTypes.STRING,
-    postDate: DataTypes.INTEGER
+    postDate: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Post',
