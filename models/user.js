@@ -12,11 +12,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Post)
     }
   };
   User.init({
-    email: DataTypes.STRING,
-    password: DataTypes.STRING
+    email: {
+      type:DataTypes.STRING,
+      unique: {
+        msg: `email sudah dipakai`
+      }
+    },
+    password: DataTypes.STRING,
+    username: DataTypes.STRING
   }, {
     hooks: {
       beforeCreate: (instance, options) => {

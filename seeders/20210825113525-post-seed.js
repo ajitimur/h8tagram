@@ -18,7 +18,8 @@ module.exports = {
         caption: `This is a pink landscape`,
         postDate: new Date(),
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        UserId: 1
       },
       {
         contentUrl: `https://post.healthline.com/wp-content/uploads/2020/07/pizza-beer-1200x628-facebook-1200x628.jpg`,
@@ -26,7 +27,8 @@ module.exports = {
         caption: `My favourite pizza`,
         postDate: new Date(),
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        UserId: 1
       }
     ]
 

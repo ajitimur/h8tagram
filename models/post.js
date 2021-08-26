@@ -12,14 +12,20 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       // Movie.belongsToMany(models.Cast, { through: 'MovieCast' });
+      Post.belongsTo(models.User)
       Post.belongsToMany(models.Hashtag, { through: `PostHashtags`,  foreignKey: `postId`})
     }
+    //  getHashTags = str => str.match(/#[a-zA-Z0-9]+/g).map(match => match.substring(1));
+    // getHashtags(str){
+    //   return str.match(/#[a-zA-Z0-9]+/g).map(match => match.substring(1));
+    // }
   };
   Post.init({
     contentUrl: DataTypes.STRING,
     title: DataTypes.STRING,
     caption: DataTypes.STRING,
-    postDate: DataTypes.DATE
+    postDate: DataTypes.DATE,
+    UserId: DataTypes.INTEGER
   }, {
     hooks: {
       beforeCreate: (instance, options) => {
