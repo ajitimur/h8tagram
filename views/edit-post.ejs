@@ -9,5 +9,16 @@
 <body>
     <h1>Edit Post</h1>
     
+    <form action="/post/edit/<%= data.id %>" method="POST">
+        <label>image url:</label><br>
+        <input type="text" name="contentUrl" value="<%= data.contentUrl%>"><br>
+        <label for="">Title</label><br>
+        <input type="text" name="title" value="<%= data.title %>"><br>
+        <label for="">Caption</label><br>
+        <input type="text" name="caption" value="<%= data.caption %>"><br>
+        
+    </select>
+    <input type="submit" value="submit">
+    </form>
 </body>
 </html>

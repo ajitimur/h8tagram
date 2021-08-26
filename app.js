@@ -2,7 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 const router = require(`./routes/index`)
+const passport = require('passport')
+
 const session = require(`express-session`)
+require('./config/passport')(passport)
 
 app.set(`view engine`, `ejs`)
 app.use(express.urlencoded({extended: true}))
@@ -16,6 +19,8 @@ app.use(session({
   saveUninitialized: true,
 }))
 
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(`/`, router)
 
 
