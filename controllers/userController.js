@@ -31,6 +31,7 @@ class UserController {
     })
       .then((data) => {
         if (data) {
+            // console.log(data);
           let comparePassword = checkPassword(password, data.password);
           if (comparePassword) {
             req.session.isLogin = true;
