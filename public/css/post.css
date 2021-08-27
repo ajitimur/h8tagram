@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Lato&display=swap");
+body {
+  font-family: "Lato", sans-serif;
+  width: 100vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+p,
+h2 {
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+.sections {
+  display: flex;
+}
+
+#section {
+  background-color: #282a34;
+  color: #fff;
+  width: 300px;
+  padding: 2rem;
+  height: 100%;
+  position: fixed;
+}
+
+#section .logo h2 {
+  font-family: "Cookie", cursive;
+  align-self: center;
+  padding-top: 0.1rem;
+  padding-left: 0.8rem;
+  font-size: 2rem;
+}
+
+#section .logo-text {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#section .my-profile .my-image img {
+  width: 90px;
+  border-radius: 50%;
+}
+
+#section .my-profile .my-name {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.1rem;
+  transition: 1s ease-in-out;
+}
+
+#section .my-profile .my-name .id {
+  text-align: center;
+  padding-top: 0.01rem;
+  font-family: "Mulish", sans-serif;
+}
+
+#section .my-profile .my-name .id a {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+#section .my-profile .main-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-right: 1rem;
+  margin-bottom: 0.2rem;
+}
+#section .my-profile .my-name {
+  align-items: center;
+  text-align: center;
+}
+
+#section .my-profile .main-profile div {
+  padding: 0.3rem;
+}
+
+#section .box-wrap {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+#section .box-wrap .down-text a {
+  font-size: 0.8rem;
+  color: #888;
+  padding-top: 0.7rem;
+}
+
+#section .box-wrap .box-border {
+  border-left: 0.1px solid #3d3d3d;
+  border-right: 0.1px solid #3d3d3d;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#section .option-container {
+  margin-left: 0.5rem;
+}
+
+#section .option-container div {
+  margin-top: 1.6rem;
+}
+
+#section .option-container .item1 {
+  display: flex;
+}
+
+#section .option-container .item1 p {
+  padding-left: 2rem;
+}
+
+#section .option-container .notification .number {
+  font-size: 0.8rem;
+  color: #888;
+  padding-left: 4rem;
+}
+
+#section .option-container .notification .number2 {
+  padding-left: 6.7rem;
+}
+
+#section .option-container .option-item {
+  padding-top: 1rem;
+  border-top: 0.1px solid #3d3d3d;
+}
+
+#section .option {
+  margin-top: 3rem;
+}
+
+#showcase-section {
+  background: #3d3f51;
+  width: 100vw;
+  padding: 1rem;
+  height: 100vh;
+  margin-left: 290px;
+  overflow-x: hidden;
+}
+
+#showcase-section .searchbar .bar input {
+  width: 270px;
+  height: 3rem;
+  background-color: #494b5b;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#showcase-section .searchbar .bar input:focus {
+  outline: none;
+}
+
+#showcase-section .searchbar .bar button {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  margin-right: -10px;
+  background-color: #494b5b;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+}
+
+#showcase-section .searchbar .bar button:focus {
+  outline: none;
+}
+
+#showcase-section .searchbar .bar button .fa {
+  color: #fff;
+}
+
+.showcase-box1 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.showcase-box1 .icons ul {
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.9rem;
+}
+
+.showcase-box1 .icons li {
+  padding-left: 2.3rem;
+}
+
+.showcase-box1 .icons .after::after {
+  content: "•";
+  color: red;
+  padding-left: 0.5rem;
+  padding-top: -10rem;
+}
+
+.showcase-box1 .icons .add-photo a {
+  display: flex;
+  justify-content: center;
+  margin-top: -15px;
+}
+
+.showcase-box1 .icons .btn {
+  display: inline-block;
+  background-size: 200%;
+  background-position: 0 0;
+  padding: 1rem 2rem;
+  padding-left: 1.4rem;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-position 0.5s;
+}
+
+.showcase-box1 .icons .btn p {
+  padding-left: 0.5rem;
+}
+
+.showcase-box1 .icons .btn:hover {
+  background-position: 100% 0px;
+}
+
+.story {
+  padding-left: 5rem;
+  padding-top: 4rem;
+  padding-right: 5.6rem;
+  color: #fff;
+}
+
+.story .story-text {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+}
+
+.story .story-text .watch-all {
+  display: flex;
+}
+
+.story .story-text .watch-all p {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.story-image {
+  width: 100%;
+  height: 90px;
+}
+
+.story-image img {
+  width: 85px;
+  border-radius: 50%;
+}
+
+.story-image ul {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.story-image ul li {
+  padding-right: 2rem;
+  justify-content: center;
+}
+
+.story-image ul li p {
+  text-align: center;
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+}
+
+.showcase-feeds {
+  padding-top: 3rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.showcase-text {
+  margin-bottom: 2rem;
+}
+
+.showcase-text ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase-text .options {
+  display: flex;
+  margin-right: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.showcase-text .options p {
+  padding-left: 2rem;
+  display: block;
+}
+
+.showcase-post img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.showcase-account {
+  display: flex;
+  align-items: center;
+}
+
+.showcase-account img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.showcase-account p {
+  padding-left: 0.5rem;
+}
+
+.showcase-image .card {
+  width: 100%;
+}
+
+.showcase-all p {
+  font-size: 0.8rem;
+}
+
+.showcase-all .icon {
+  display: flex;
+  align-items: center;
+}
+
+.showcase-all .icon a {
+  margin-left: 1.5rem;
+}
+h2.heading {
+  font-size: 2rem;
+}
+h3 {
+  color: #fff;
+  padding-bottom: 0.4rem;
+}
+.photo-content {
+  padding: 0.5rem 0.4rem;
+}
+.photo-content h3 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+.photo-content h5 {
+  color: #fff;
+}
+.photo-content p {
+  font-size: 1rem;
+}
+
+.my-image img {
+  z-index: 2;
+}
+.showcase-image img {
+  width: 80%;
+}

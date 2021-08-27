@@ -10,10 +10,11 @@
         href="https://fonts.googleapis.com/css2?family=Cookie&family=Lobster&family=Mulish&family=Pacifico&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link href= "/public/css/editPost.css" rel="stylesheet" type="text/css" />
+    <link href= "/public/css/profile.css" rel="stylesheet" type="text/css" />
     <title>Instagram</title>
     
 </head>
+
 <body>
     <div class="sections">
         <div id="section" class="section-profile">
@@ -29,7 +30,7 @@
                                 <div class="main-profile">
                                     <div class="my-image">
                                         <a href="#">
-                                            <img src="../public/css/images/clip-1755.png" alt="" class="photo"></a>
+                                            <img src="../public/css/images/blankProf.jpeg" alt="" class="photo"></a>
                                     </div>
                                     <div class="my-name">
                                         <p class="name"><a href=""><%=dataUser.username%></a></p>
@@ -95,7 +96,7 @@
                             <ul>
                                 <li>
                                     <div>
-                                        <h2><strong>Edit Post</strong></h2>
+                                        <h2 class="heading"><strong>My Profile</strong></h2>
                                     </div>
                                 </li>
                                 
@@ -103,18 +104,29 @@
                         </div>
                         
                         <div class="showcase-image">
-                         
-                            <img src="<%=data.contentUrl%>" alt="" >
-                            <form action="/post/edit/<%= data.id %>" method="POST">
-                                <label for="">Title</label><br>
-                                <input type="text" name="title" value="<%= data.title %>"><br>
-                                <label for="">Caption</label><br>
-                                <input type="text" name="caption" value="<%= data.caption %>"><br>
-                                
-                            </select>
-                            <input type="submit" value="Edit a Photo"class="submit">
-                            </form>
-                            
+                            <%data.forEach(el => {%>
+                                <div class="card">
+                                    <div class="showcase-post">
+                                        <a href="/post/postId/<%=el.id%>"><img src="<%=el.contentUrl%>" alt=""></a>
+                                    </div>
+                                    <div class="showcase-all">
+                                        <div class="showcase-account">            
+                                        </div>
+                                        <div class="photo-content">
+                                            <ul class="ulPost">
+                                                <li class="title"> <h3><%=el.title%></h3></li>
+                                                <li><a href="/post/edit/<%=el.id%>"><i class="fas fa-edit"></i></a>  <a href="/post/delete/<%=el.id%>"> <i class="far fa-trash-alt"></i></a></li>
+                                                
+                                            </ul>
+                                            <%el.Hashtags.forEach((hashtag)=> {%>
+                                                <a href="/hashtag/<%=hashtag.id%>">#<%=hashtag.name%></a>
+                                            <%})%>                                     
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                <%}) %>
                         </div>
                         
                     </div>
@@ -126,5 +138,3 @@
 </body> 
 
 </html>
-
-
