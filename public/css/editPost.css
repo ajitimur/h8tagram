@@ -385,6 +385,10 @@ h3 {
 .showcase-image {
   width: 70%;
 }
+.showcase-image img {
+  border-radius: 20px;
+  padding-bottom: 0.5rem;
+}
 .showcase-image form .submit {
   background-color: #ef4b4f;
   cursor: pointer;
