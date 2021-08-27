@@ -15,6 +15,9 @@ class UserController{
         .then(data => {
             res.redirect(`login`)
         })
+        .catch(err => {
+            console.log(err.errors.map((each) => each.message));
+        })
     }
     static login(req, res){
         res.render(`login`)

@@ -87,13 +87,16 @@ class Controller{
                
             }
         })
+        .then(data => {
+            res.redirect(`/`)
+
+        })
         .catch(err => {
-            console.log(err);
+            console.log(err.errors.map((each) => each.message));
         })
 
 
        
-        res.redirect(`/`)
     }
     static getEditPost(req, res){
         let id = req.params.id
@@ -150,13 +153,16 @@ class Controller{
                
             }
         })
+        .then(data => {
+            res.redirect(`/`)
+
+        })
         .catch(err => {
-            console.log(err);
+            console.log(err.errors.map((each) => each.message));
         })
 
 
        
-        res.redirect(`/`)
     }
     static findbyHashtag(req, res){
         let hashtagId = req.params.id

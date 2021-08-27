@@ -19,11 +19,22 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type:DataTypes.STRING,
       unique: {
-        msg: `email sudah dipakai`
+        msg: `email is already used`
+      },
+      validate: {
+        isEmail: {
+          msg: `required an email`
+        }
       }
     },
     password: DataTypes.STRING,
-    username: DataTypes.STRING
+    username: {
+      type: DataTypes.STRING,
+      unique: {
+        msg: `username is already used`
+      }
+    }
+    
   }, {
     hooks: {
       beforeCreate: (instance, options) => {
