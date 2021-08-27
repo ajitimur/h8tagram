@@ -334,12 +334,6 @@ ul {
   padding-left: 0.5rem;
 }
 
-.showcase-image {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-}
-
 .showcase-image .card {
   width: 100%;
 }
@@ -366,10 +360,20 @@ h3 {
 .photo-content {
   padding: 0.5rem 0.4rem;
 }
+.photo-content h3 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
 .photo-content h5 {
   color: #fff;
+}
+.photo-content p {
+  font-size: 1rem;
 }
 
 .my-image img {
   z-index: 2;
+}
+.showcase-image img {
+  width: 80%;
 }
