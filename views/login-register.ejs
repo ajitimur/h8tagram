@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href= "/public/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/b567ac2659.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="margin">
+            <div class="navbar">
+                <h2 class="logo">
+                    H8tagram
+                </h2>
+            </div>
+            <div class="header-container">
+                
+                <div class="text">
+                    <h1>H8stagram is the place <br>
+                        to explore inspiration</h1>
+                    <p>Discover recipes, home ideas, style inspiration and other ideas to try.</p> 
+                
+                <button id="modalBtn" class="button">Create your Account</button>
+                </div>
+            
+                <div class="header-content">
+                    <img src="../public/css/images/Screen Shot 2021-08-26 at 17.08.01.png" alt="">
+                </div>
+        </div>
+       
+        </div>
+        <div id="container" class="modal container">
+            <div class="modal-content">
+                <span class="closeBtn">&times;</span>
+                <div class="form-container sign-up-container">
+                    <form action="/register" method="POST">
+                        <h1>Create Account</h1>
+                        
+                       <span>It's free and only takes a minute</span>
+                        <input type="text" placeholder="Username" name="username"/>
+                        <input type="email" placeholder="Email" name="email"/>
+                        <div class="password-box">
+                            <input type="password" placeholder="Password"name="password"id="password1" />
+                            <i class="far fa-eye"id="togglePassword1"></i>
+
+                        </div>
+                        
+                        <button id="moveToRight">Sign Up</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="/login" method="POST">
+                        <h1>Sign in</h1>
+                        <span><a href="/auth/google" class="btn red darken-1">
+                            <i class="fab fa-google left"></i> or Login with Google
+                        </a></span>
+                        <input type="email" placeholder="Email" name="email" />
+                        <div class="password-box">
+                            <input type="password" placeholder="Password"name="password" id="password2"/>
+                            
+                            <i class="far fa-eye"id="togglePassword2"></i>
+
+                        </div>
+                        
+                        <button>Sign In</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Welcome Back!</h1>
+                            <p>To be able to see new ideas, please login with your personal info</p>
+                            <button class="ghost" id="signIn">Sign In</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Enter your personal details and discover new inspirations</p>
+                            <button class="ghost" id="signUp">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+                
+
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    
+    <script src="../public/css/main.js"></script>
+</body>
+</html>

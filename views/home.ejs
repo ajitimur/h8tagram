@@ -1,18 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Home</h1>
-    <%    data.forEach(el => {%>
-        <img src="<%=el.contentUrl%>" alt="">
-        <a href="/post/delete/<%=el.id%>">delete</a>
-        <a href="post/edit/<%=el.id%>">edit</a>
-    <%})      %>
+    <link rel="stylesheet" href="/dist/css/main.css">
+    <script src="https://kit.fontawesome.com/b567ac2659.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cookie&family=Lobster&family=Mulish&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href= "/public/css/home.css" rel="stylesheet" type="text/css" />
+    <title>Instagram</title>
     
-</body>
+</head>
+
+<body>
+    <div class="sections">
+        <div id="section" class="section-profile">
+            <div class="section-container">
+                <div class="profile-wrap">
+                    <div class="logo">
+  
+                        <h2 class="logo-text"><a href="/">H8stagram</a></h2>
+                    </div>
+                    <div class="my-profile">
+                        <div class="container">
+                            <div class="upper-profile">
+                                <div class="main-profile">
+                                    <div class="my-image">
+                                        <a href="#">
+                                            <img src="../public/css/images/blankProf.jpeg" alt="" class="photo"></a>
+                                    </div>
+                                    <div class="my-name">
+                                        <p class="name"><a href=""><%=dataUser.username%></a></p>
+                                        <p class="id"><a href=""><%=dataUser.email%></a></p>
+                                    </div>
+                                </div>
+                                <div class="box-wrap">
+                                    <div class="box">
+                                        <div>
+                                            <p><a href="#"><%=dataUser.Posts.length%></a></p>
+                                            <p class="down-text"><a href="#">Posts</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="box box-border">
+                                        <div>
+                                            <p><a href="#">14k</a></p>
+                                            <p class="down-text"><a href="">Followers</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div>
+                                            <p><a href="">14</a></p>
+                                            <p class="down-text"><a href="">Following</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <div class="option-container">
+                                    <div class="option-items">
+                                        <div class="item1 notification">
+                                            <i class="fas fa-th-large"></i>
+                                            <p><a href="/">Feed</a></p>
+                                        </div>
+                                        <div class="item1">
+                                            <i class="fas fa-search"></i>
+                                            <p><a href="/profile/<%=dataUser.id%>">My profile</a></p>
+                                        </div>
+                                        <div class="item1">
+                                            <i class="fas fa-search"></i>
+                                            <p><a href="/post/add">Add Photo</a></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="option-item">
+                                        <div class="item1">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            <p><a href="/logout">Log Out</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="showcase-section">
+            <div class="showcase-container">
+                <div class="showcase-feeds">
+                    <div class="showcase-container">
+                        <div class="showcase-text">
+                            <ul>
+                                <li>
+                                    <div>
+                                        <h2 class="heading"><strong>Feed</strong></h2>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div class="showcase-image">
+                            <%data.forEach(el => {%>
+                                <div class="card">
+                                    <div class="showcase-post">
+                                        <a href="/post/postId/<%=el.id%>"><img src="<%=el.contentUrl%>" alt=""></a>
+                                    </div>
+                                    <div class="showcase-all">
+                                        <div class="showcase-account">            
+                                        </div>
+                                        <div class="photo-content">
+                                            <h3><%=el.title%></h3>
+                                            <%el.Hashtags.forEach((hashtag)=> {%>
+                                                
+                                                <a href="/hashtag/<%=hashtag.id%>">#<%=hashtag.name%></a>
+                                            <%})%>                                     
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                <%}) %>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body> 
+
 </html>
