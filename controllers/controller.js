@@ -109,11 +109,14 @@ class Controller {
           console.log("disin dulu");
         }
       })
+      .then(data => {
+          res.redirect(`/profile/${req.session.userId}`);
+
+      })
       .catch((err) => {
         console.log(err);
       });
 
-    res.redirect(`/profile/${req.session.userId}`);
   }
   static getEditPost(req, res) {
     let id = req.params.id;
@@ -174,11 +177,14 @@ class Controller {
           console.log("disin dulu");
         }
       })
+      .then(data => {
+          res.redirect(`/profile/${req.session.userId}`);
+
+      })
       .catch((err) => {
         console.log(err);
       });
 
-    res.redirect(`/`);
   }
   static findbyHashtag(req, res) {
     let hashtagId = req.params.id;

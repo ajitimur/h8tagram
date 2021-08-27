@@ -21,7 +21,15 @@ module.exports = (sequelize, DataTypes) => {
     // }
   };
   Post.init({
-    contentUrl: DataTypes.STRING,
+    contentUrl: {
+      type: DataTypes.STRING,
+      validate: {
+        isUrl: {
+          msg: `image url is required`
+        }
+      }
+    }
+    ,
     title: DataTypes.STRING,
     caption: DataTypes.STRING,
     postDate: DataTypes.DATE,
